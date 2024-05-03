@@ -30,7 +30,7 @@ def runge_kulta4(h, tf):
         l2=h*f(theta1+k1/2, theta2+q1/2, omega1+l1/2, omega2+m1/2)
         q2=h*(omega2+m1/2)
         m2=h*g(theta1+k1/2,theta2+q1/2, omega1+l1/2, omega2+m1/2)
-        k3=h*omega1+l2/2
+        k3=h*(omega1+l2/2)
         l3=h*f(theta1+k2/2, theta2+q2/2, omega1+l2/2, omega2+m2/2)
         q3=h*(omega2+m2/2)
         m3=h*g(theta1+k2/2, theta2+q2/2, omega1+l2/2, omega2+m2/2)
@@ -56,9 +56,9 @@ for k in [0,1,2,3]:
     
     plt.plot(t_values, theta2_values, label=r"$\theta_2$"+ f" para h= {h}")
 
-valores_r, theta2_values_r=runge_kulta4(1/1000, 100)
-t_values_r=np.linspace(0,100,len(theta2_values_r))
-plt.plot(t_values_r, theta2_values_r, label=r"$\theta_2$"+ f" para h= 0,001 (real)")
+#valores_r, theta2_values_r=runge_kulta4(1/1000, 100)
+#t_values_r=np.linspace(0,100,len(theta2_values_r))
+#plt.plot(t_values_r, theta2_values_r, label=r"$\theta_2$"+ f" para h= 0,001 (real)")
 plt.xlabel("Tiempo (t)")
 plt.ylabel(r"$\theta_2$")
 plt.title("Evolución de $\\theta_2$ en función del tiempo")
