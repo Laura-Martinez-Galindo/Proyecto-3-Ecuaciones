@@ -43,7 +43,7 @@ def runge_kulta4(h, tf):
         n_omega2= omega2 + (m1+2*m2+2*m3+m4) / 6
         n_theta1=theta1 + (k1+2*k2+2*k3+k4) / 6
         n_theta2=  theta2 + (q1+2*q2+2*q3+q4) / 6
-        nuevos=[n_theta1, n_theta2, n_omega1, n_omega2]
+        nuevos=[n_theta1/1000, n_theta2/1000, n_omega1/1000, n_omega2/1000]
         theta2_values.append(n_theta2)
         valores.append(nuevos)
     return valores, theta2_values
